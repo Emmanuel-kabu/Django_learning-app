@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang = "en"> 
+    <head> 
+        {% load static %}
+        <meta charset = UTF-8>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title>Collaborative Learning Platform</title>  
+        <link rel = "stylesheet" href = "{% static "style.css" %}">
+    </head>
+    <body>
+          
+         <section class = "navigation">
+            <nav>
+                <ul>
+                    <li><a href = "{% url 'MylearningApp:index' %}">Home</a><li>
+                    <li><a href = "{% url 'MylearningApp:course' %}">Courses</a></li>
+                    <li><a href = "{% url 'MylearningApp:community'%}">Community</a><li>
+                    <li><a href =  "{% url 'MylearningApp:testimonials' %}">Testimonials</a></li>
+                    <li><a href =  "{% url 'MylearningApp:profile' %}">Profile</a></li> 
+                    <li><a href = "{% url 'MylearningApp:notification'%}">notifications</a></li> 
+                    <li><a href = "{% url 'MylearningApp:home'%}">Meeting</a></li>
+                    
+                <ul>
+            </nav>
+        </section>
+        <header>   
+                <h1>Collaborate And Learn Together</h1> 
+                <p>Create courses, join lessons and discussions, share files, and learn interactively with peers</p>
+                <a href ="{% url 'MylearningApp:course' %}" class = cta-button>Get Started</a>
+        </header>
+            
+            <section class="featured_courses">
+                <h2>Featured Courses</h2>
+                {% for couse in featured_courses %}
+                    <li>{{ course.title }} - {{ course.description }}</li>
+                {% endfor %}
+            
+                
+            </section>
+            
+            <section class="collaborative_tools">
+                <h2>Join the Conversation</h2>
+                <p>Engage in live discussions, collaborate on projects, and learn together</p>
+                <!-- Add content for collaborative tools here -->
+            </section>
+            
+            <section class="testimonials">
+                <h2>What Our Users Say</h2>
+                <!-- Add testimonials content here -->
+            </section>
+            
+         <footer>
+            <p>
+               <a href = "{% url 'MylearningApp:about' %}">About</a>|
+               <a href = "{% url 'MylearningApp:privacy' %}">Privacy Policy</a>|
+               <a href = "{% url 'MylearningApp:t_and_c' %}">Terms And Conditions</a>|
+               <a href = "{% url 'MylearningApp:faq' %}">FAQ</a>|
+               <a href = "{% url 'MylearningApp:support' %}">Support</a>
+            </p>
+            <p>Follow us on our sicial media</p>
+         </footer>
+    </body>
+    
+</html>
+
+    
